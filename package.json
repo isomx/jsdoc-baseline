@@ -1,22 +1,15 @@
 {
-  "name": "jsdoc-baseline",
+  "name": "appify-docs",
   "version": "0.1.1",
-  "description": "A basic template for JSDoc.",
+  "description": "A fork of Baseline template by Jeff Williams",
   "main": "publish.js",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hegemonic/jsdoc-baseline.git"
+    "url": "https://github.com/ugility/appify-docs.git"
   },
-  "keywords": [
-    "jsdoc",
-    "api",
-    "docs",
-    "documentation",
-    "template"
-  ],
   "author": {
     "name": "Jeff Williams",
     "email": "jeffrey.l.williams@gmail.com"
