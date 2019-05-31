@@ -21,8 +21,8 @@
     {{/block}}
     {{#block 'details-table-types'}}
         <td {{~cssClass 'details-table-types'}}>
-            {{#all type type.parsedType}}
-                <p>{{describeType type.parsedType 'extended'}}</p>
+            {{#all type}}
+                <p>{{describeType type 'extended'}}</p>
             {{else}}
                 <p>&nbsp;</p>
             {{/all}}
