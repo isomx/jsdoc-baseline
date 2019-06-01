@@ -18,8 +18,8 @@
     {{#each returns}}
         <dd>
             {{~#markdown~}}
-                {{~#all type type.parsedType~}}
-                    <code>{{describeType type.parsedType}}</code>&nbsp;
+                {{~#all type~}}
+                    <code>{{describeType type}}</code>&nbsp;
                 {{~/all~}}
                 {{~resolveLinks description~}}
             {{~/markdown~}}
