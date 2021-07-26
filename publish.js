@@ -65,7 +65,11 @@ exports.publish = (data, opts, tutorials) => {
 
     // generate TOC data and index page
     job.generateTocData({ hasGlobals: docletHelper.hasGlobals() })
-        .generateIndex(opts.readme);
+      /*
+       * My addition to pass the "tutorials" to that method
+       * so it can render a tutorial instead.
+       */
+      .generateIndex(opts.readme, tutorials);
 
     // generate the rest of the output files (excluding tutorials)
     docletHelper.getOutputLongnames().forEach(longname => {

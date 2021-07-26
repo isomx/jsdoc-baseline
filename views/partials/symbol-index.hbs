@@ -14,18 +14,26 @@
     limitations under the License.
 --}}
 <div {{~cssClass '!symbol-index'}}>
-    {{#eachIndexGroup allLongnamesTree}}
-        <section>
-            <div {{~cssClass '!symbol-index-content'}}>
-                <h id="{{@groupName}}">{{@groupName}}</h>
-                <div {{~cssClass '!symbol-index-section'}}>
-                    {{#each (group this 3)}}
-                        {{#withOnly doclets=this}}
-                            {{#embed 'symbol-index-section'}}{{/embed}}
-                        {{/withOnly}}
-                    {{/each}}
+    {{!-- Begin My Addition --}}
+    {{#if tutorialContent~}}
+        <article>
+            {{#markdown}}{{~resolveLinks tutorialContent}}{{/markdown}}
+        </article>
+    {{else~}}
+        {{!-- Original implementation --}}
+        {{#eachIndexGroup allLongnamesTree}}
+            <section>
+                <div {{~cssClass '!symbol-index-content'}}>
+                    <h id="{{@groupName}}">{{@groupName}}</h>
+                    <div {{~cssClass '!symbol-index-section'}}>
+                        {{#each (group this 3)}}
+                            {{#withOnly doclets=this}}
+                                {{#embed 'symbol-index-section'}}{{/embed}}
+                            {{/withOnly}}
+                        {{/each}}
+                    </div>
                 </div>
-            </div>
-        </section>
-    {{/eachIndexGroup}}
+            </section>
+        {{/eachIndexGroup}}
+    {{/if}}
 </div>
