@@ -16,10 +16,11 @@ g{text-transform: none !important}
 
 2. Nav & content layout to make it a fixed nav position and centered content:
 
-#jsdoc-toc-nav{height:calc(100vh - 50px); overflow: auto; width:20% !important; right: 80% !important; position: fixed !important; margin-top: 0px !important; padding-top: 15px !important; top: 50px !important}
+#jsdoc-toc-nav{height:calc(100vh - 50px); overflow: auto; width:20% !important; right: 80% !important; position: fixed !important; margin-top: 0px !important; padding-top: 15px !important; top: 50px !important; padding-bottom: 3em;}
 
 #jsdoc-content-container{width: 80% !important; left: 20% !important;}
 #jsdoc-main{margin-left: auto; margin-right: auto; max-width: 1000px;}
+ul.jqtree_common{ padding-bottom: 1em;}
 
 See views/layouts/toc.hbs, part marked with ({{!-- appify changes --}}.
 It is an added script that restores the scroll position of the nav sidebar.
