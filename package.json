@@ -1,6 +1,6 @@
 {
   "name": "@isomx/jsdoc-baseline",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A fork of Baseline template by Jeff Williams",
   "main": "publish.js",
   "scripts": {
