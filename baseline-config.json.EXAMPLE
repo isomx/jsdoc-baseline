@@ -102,4 +102,5 @@
     // be rendered. So it is only necessary to add the paths of files
     // that should be excluded.
     "privateSrcFilesMap": "",
+
 }
