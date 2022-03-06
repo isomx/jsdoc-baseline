@@ -14,11 +14,13 @@
     limitations under the License.
 */
 const config = require('./lib/config');
+const path = require('path');
 let DocletHelper;
 let finders;
 const helper = require('jsdoc/util/templateHelper');
 let PublishJob;
 let Template;
+let LinkFormatter;
 
 // Intl.PluralRules polyfill
 require('intl-pluralrules');
@@ -31,6 +33,7 @@ function init(filepaths) {
     DocletHelper = finders.modules.require('./doclethelper');
     PublishJob = finders.modules.require('./publishjob');
     Template = finders.modules.require('./template');
+    LinkFormatter = finders.modules.require('./LinkFormatter');
 }
 
 exports.publish = (data, opts, tutorials) => {
@@ -38,13 +41,22 @@ exports.publish = (data, opts, tutorials) => {
     let docletHelper;
     let job;
     let template;
+    let linkFormatter;
+    let privateSrcFilesMap;
 
     // load the core modules using the file finder
     init(conf.modules);
 
-    docletHelper = new DocletHelper();
-    template = new Template(conf);
-    job = new PublishJob(template, opts);
+
+    linkFormatter = new LinkFormatter(conf);
+    if (conf.privateSrcFilesMap) {
+        privateSrcFilesMap = require(path.join(process.cwd(), conf.privateSrcFilesMap));
+    } else {
+        privateSrcFilesMap = {};
+    }
+    docletHelper = new DocletHelper(linkFormatter);
+    template = new Template(conf, privateSrcFilesMap);
+    job = new PublishJob(template, opts, linkFormatter, privateSrcFilesMap);
 
     // set up tutorials
     helper.setTutorials(tutorials);
@@ -63,11 +75,20 @@ exports.publish = (data, opts, tutorials) => {
     // generate globals page if necessary
     job.generateGlobals(docletHelper.globals);
 
+    // console.log('ALL = ', docletHelper.all);
     // generate TOC data and index page
-    job.generateTocData({ hasGlobals: docletHelper.hasGlobals() })
+    job.generateTocData({
+        hasGlobals: docletHelper.hasGlobals(),
+        needsFile: docletHelper.needsFile,
+        all: docletHelper.all,
+        allLongnamesTree: docletHelper.allLongnamesTree
+    })
       /*
-       * My addition to pass the "tutorials" to that method
-       * so it can render a tutorial instead.
+       * ^^ I added needsFile to `options` to prevent adding
+       * nav links to a file that doesn't exist.
+       *
+       * And this is my addition to pass the "tutorials" to
+       * the index method so that it can render a tutorial instead.
        */
       .generateIndex(opts.readme, tutorials);
 
@@ -80,4 +101,6 @@ exports.publish = (data, opts, tutorials) => {
     // finally, generate the tutorials, and copy static files to the output directory
     job.generateTutorials(tutorials)
         .copyStaticFiles();
+
+    job.generateRawDataOutput(docletHelper);
 };

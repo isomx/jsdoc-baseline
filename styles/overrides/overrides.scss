@@ -1,0 +1,389 @@
+
+.rmd-embed {
+  body, h1, h2, h3, h4, h5, h6, p {
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    padding-top: 0px;
+  }
+
+  h1 {
+    font-weight: 300;
+    letter-spacing: -0.015625em;
+    line-height: 6rem;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+  }
+
+  p {
+    font-weight: 400;
+    letter-spacing: 0.0357142857em;
+    line-height: 2rem;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.0357142857em;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .symbol-description ul, .symbol-description ol {
+    font-family: Roboto,sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.1em;
+    line-height: 1.25em;
+    font-weight: 400;
+    letter-spacing: .009375em;
+    text-decoration: inherit;
+    text-transform: inherit;
+  }
+
+  .symbol-description ul li, .symbol-description ol li {
+    margin-bottom: 0.75em;
+  }
+
+  .symbol-name {
+    font-weight: 550;
+  }
+
+  #jsdoc-navbar {
+    display: none;
+  }
+
+  .label-package, .label-private, .label-protected, .label-public, .label-inner, .label-static, .label-kind, .label-constant, .label-readonly {
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  &--with-nav {
+    #jsdoc-content-container {
+      /*width: 85% !important;*/
+      /*left: 15% !important;*/
+      /*width: 100% !important;*/
+
+      position: absolute;
+      left: 238px !important;
+      width: calc(100vw - 264px) !important;
+    }
+
+    #jsdoc-toc-nav {
+      top: 0px !important;
+      height: 100vh;
+      width: 224px !important;
+      left: 0px !important;
+      right: unset !important;
+
+      /*width: 15% !important;*/
+      /*right: 85% !important;*/
+      padding-left: 0px !important;
+    }
+
+    #jsdoc-toc-nav .jqtree-tree {
+      width: 208px;
+    }
+
+    @media screen and (min-width: 1400px) {
+      #jsdoc-content-container {
+        /*width: 85% !important;*/
+        /*left: 15% !important;*/
+        /*width: 100% !important;*/
+        left: 338px !important;
+        width: calc(100vw - 364px) !important;
+      }
+      #jsdoc-toc-nav {
+        width: 324px !important;
+      }
+      #jsdoc-toc-nav .jqtree-tree {
+        width: 308px;
+      }
+    }
+
+    #jsdoc-toc-nav::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    #jsdoc-toc-nav::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    #jsdoc-toc-nav::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+  }
+
+  &--no-nav {
+    #jsdoc-content-container {
+      /*width: 85% !important;*/
+      /*left: 15% !important;*/
+      /*width: 100% !important;*/
+
+      position: relative;
+      width: 100% !important;
+      left: unset !important;
+    }
+
+    #jsdoc-toc-nav {
+      display: none;
+    }
+  }
+}
+
+
+.light-theme {
+  body {
+    background-color: #fafafa;
+  }
+  /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+  /* Atelier Lakeside Light */
+  .prettyprint {
+    background: #ebf8ff;
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .pln {
+    color: #161b1d;
+  }
+
+  /* Specify class=linenums on a pre to get line numbering */
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #7195a8;
+  }
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #ebf8ff;
+    list-style-type: decimal;
+  }
+
+  @media screen {
+    /* string content */
+    .str {
+      color: #568c3b;
+    }
+    /* keyword */
+    .kwd {
+      color: #6b6bb8;
+    }
+    /* comment */
+    .com {
+      color: #7195a8;
+    }
+    /* type name */
+    .typ {
+      color: #257fad;
+    }
+    /* literal value */
+    .lit {
+      color: #935c25;
+    }
+    /* punctuation */
+    .pun {
+      color: #161b1d;
+    }
+    /* lisp open bracket */
+    .opn {
+      color: #161b1d;
+    }
+    /* lisp close bracket */
+    .clo {
+      color: #161b1d;
+    }
+    /* markup tag name */
+    .tag {
+      color: #d22d72;
+    }
+    /* markup attribute name */
+    .atn {
+      color: #935c25;
+    }
+    /* markup attribute value */
+    .atv {
+      color: #2d8f6f;
+    }
+    /* declaration */
+    .dec {
+      color: #935c25;
+    }
+    /* variable name */
+    .var {
+      color: #d22d72;
+    }
+    /* function name */
+    .fun {
+      color: #257fad;
+    }
+  }
+}
+
+.dark-theme {
+  /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+  /* Tomorrow Night Blue */
+  .prettyprint {
+    background: #002451;
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .pln {
+    color: #ffffff;
+  }
+
+  /* Specify class=linenums on a pre to get line numbering */
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #7285b7;
+  }
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #002451;
+    list-style-type: decimal;
+  }
+
+  @media screen {
+    /* string content */
+    .str {
+      color: #d1f1a9;
+    }
+    /* keyword */
+    .kwd {
+      color: #ebbbff;
+    }
+    /* comment */
+    .com {
+      color: #7285b7;
+    }
+    /* type name */
+    .typ {
+      color: #bbdaff;
+    }
+    /* literal value */
+    .lit {
+      color: #ffc58f;
+    }
+    /* punctuation */
+    .pun {
+      color: #ffffff;
+    }
+    /* lisp open bracket */
+    .opn {
+      color: #ffffff;
+    }
+    /* lisp close bracket */
+    .clo {
+      color: #ffffff;
+    }
+    /* markup tag name */
+    .tag {
+      color: #ff9da4;
+    }
+    /* markup attribute name */
+    .atn {
+      color: #ffc58f;
+    }
+    /* markup attribute value */
+    .atv {
+      color: #99ffff;
+    }
+    /* declaration */
+    .dec {
+      color: #ffc58f;
+    }
+    /* variable name */
+    .var {
+      color: #ff9da4;
+    }
+    /* function name */
+    .fun {
+      color: #bbdaff;
+    }
+  }
+
+  .prettyprint code {
+    background-color: #002451;
+  }
+
+  /* The colors are derived from rmd (react-md) vars based on the current theme */
+
+  body {
+    background-color: #121212;
+    color: #d9d9d9;
+  }
+
+  a {
+    color: #2196f3;
+  }
+
+  a:visited {
+    color: #1e88ef;
+  }
+
+  a:hover {
+    color: #42a5f5;
+  }
+
+  code {
+    background-color: #002451;
+    /* This is the Material UI secondary color */
+    color: #ff9da4;
+  }
+
+  #jsdoc-toc-nav {
+    background-color: #242424;
+    border-right: #000;
+    color: #d9d9d9;
+  }
+
+  .jsdoc-details-table>tbody>tr:hover, .table-hover>tbody>tr:hover, .table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active {
+    background-color: #242424;
+  }
+
+  h1, h2 {
+    border-bottom: 1px solid #b3b3b3;
+  }
+
+  .summary-callout h2 {
+    border-bottom: none;
+  }
+
+  .jsdoc-details-table>tbody>tr>td, .jsdoc-details-table>tbody>tr>th, .jsdoc-details-table>tfoot>tr>td, .jsdoc-details-table>tfoot>tr>th, .jsdoc-details-table>thead>tr>td {
+    border-top: 1px solid #b3b3b3;
+  }
+
+  .jsdoc-details-table>thead>tr>th {
+    border-bottom: 2px solid #b3b3b3;
+  }
+}

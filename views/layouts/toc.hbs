@@ -31,13 +31,20 @@
     if (typeof localStorage !== 'undefined') {
         var sidebar = document.querySelector("#jsdoc-toc-nav");
 
-        var top = localStorage.getItem("sidebar-scroll");
-        if (top !== null) {
-            sidebar.scrollTop = parseInt(top, 10);
+        var scroll = localStorage.getItem("sidebar-scroll");
+        if (scroll) {
+            scroll = JSON.parse(scroll);
+            setTimeout(() => {
+                sidebar.scrollTop = scroll.top;
+                sidebar.scrollLeft = scroll.left;
+            }, 150);
         }
 
         window.addEventListener("beforeunload", () => {
-            localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+            localStorage.setItem("sidebar-scroll", JSON.stringify({
+                top: sidebar.scrollTop,
+                left: sidebar.scrollLeft
+            }));
         });
     }
 

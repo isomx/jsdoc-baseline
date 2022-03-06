@@ -191,7 +191,7 @@ params:
     optional: '[{param}]'
     repeatable: '...{param}'
 returnTypesSeparator: '&nbsp;&rarr; '
-source: 'Source:'
+source: 'Source Code:'
 tables:
     body:
         defaultValue: 'Defaults to {valueString}.'

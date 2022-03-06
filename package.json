@@ -1,5 +1,5 @@
 {
-  "name": "appify-docs",
+  "name": "@isomx/jsdoc-template",
   "version": "0.1.1",
   "description": "A fork of Baseline template by Jeff Williams",
   "main": "publish.js",
@@ -8,22 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ugility/appify-docs.git"
+    "url": "https://github.com/isomx/jsdoc-baseline.git"
   },
-  "author": {
-    "name": "Jeff Williams",
-    "email": "jeffrey.l.williams@gmail.com"
-  },
+  "author": "Josh Cope <josh@isomx.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/hegemonic/jsdoc-baseline/issues"
+    "url": "https://github.com/isomx/jsdoc-baseline/issues"
   },
-  "homepage": "https://github.com/hegemonic/jsdoc-baseline",
+  "homepage": "https://github.com/isomx/jsdoc-baseline",
   "dependencies": {
     "deep-extend": "^0.6.0",
     "escape-string-regexp": "^2.0.0",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.7",
     "handlebars-layouts": "^3.1.4",
+    "highlight.js": "^11.4.0",
+    "highlightjs-graphql": "^1.0.2",
     "intl-messageformat": "^3.1.1",
     "intl-pluralrules": "^1.0.1",
     "js-beautify": "^1.9.1",
@@ -50,6 +49,6 @@
     "jsdoc": "^3.6.2"
   },
   "engines": {
-    "node": ">=8.15.0"
+    "node": ">=12.22.1"
   }
 }
