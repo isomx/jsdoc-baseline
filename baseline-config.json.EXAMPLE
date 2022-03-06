@@ -35,5 +35,71 @@
         // Set to `true` to embed child properties of parameters within the same table row as the
         // parameter. Set to `false` to list child properties on their own rows.
         "nestedPropertyTables": true
+    },
+
+    // set to `true` to exclude the nav section. Useful when `bodyContentOnly === true`.
+    "excludeNav": false,
+    // Whether the docs are being embedded. This will add 'rmd-embed' className to the
+    // <html> tag as well as either `rmd-embed--no-nav` or `rmd-embed--with-nav`, depending
+    // on the value of the `excludeNav` option.
+    //
+    // This has no affect if `bodyContentOnly === true`.
+    "embedded": false,
+    // The name of the theme cookie. It will look for this cookie in order
+    // to update the theme (light/dark). Not applicable if
+    // `bodyContentOnly === true`.
+    "themeCookie": "",
+    // The default theme (light/dark) to use. Not applicable if
+    // `bodyContentOnly === true`.
+    "defaultTheme": "light",
+    // Optional classNames to add to the <html> tag. Not applicable
+    // if `bodyContentOnly === true`.
+    "htmlTagClassName": "",
+    // Output data about the docs. Useful for things like embedding the docs.
+    // Each of the properties will be a `.js` file with a default Object export.
+    "dataOutput": {
+      // The relative path to a directory where data about the docs should be output.
+      // If not provided, the data won't be output. Use the additional
+      // options to define what exactly is output.
+      "dir": "",
+      "doclets": false,
+      "docletsTree": false,
+      "longnameToUrl": false,
+      "longnameToSrcUrl": false,
+      "navData": false,
+      // Same as "navData", except that it'll be in nested form
+      "navTree": false,
+      // The base url (xyz.html, no hash) to the itemId (its longname)
+      "navUrlBaseToItemId": false,
+      // The doclets that were not included in the rendered docs.
+      // The `excludedDocletsWithHash` is especially useful, since
+      // it often indicates a problem with the way the symbols
+      // were documented.
+      "excludedDocletsWithHash": false,
+      // This is less useful than `excludedDocletsWithHash`, since
+      // this is typically inline declarations that are known
+      // not to be included.
+      "excludedDocletsWithoutHash": false
     }
+    // When `true`, only the <body> will be rendered (but not wrapped in <body>).
+    // Useful when embedding docs.
+    "bodyContentOnly": false,
+    // The base path to use for the links. Useful when embedding. For example,
+    // `/docs` would result in links being added to link tags as
+    // `/docs/rendered_file.html` rather than "rendered_file.html".
+    "linksBasePath": "",
+    // The relative path to a .json file (or .js with default Object export)
+    // that maps the absolute path of source files to a boolean indicating
+    // whether the source code should be output in the documentation.
+    //
+    // This has no affect unless `sourceFiles.generate === true`.
+    //
+    // Any source files whose path has `true` in this Object will not
+    // be rendered, and instead the template will show `Source Code: not published`
+    // (rather than a link).
+    //
+    // This Object is opt-out, so any files **not** in this map will
+    // be rendered. So it is only necessary to add the paths of files
+    // that should be excluded.
+    "privateSrcFilesMap": "",
 }

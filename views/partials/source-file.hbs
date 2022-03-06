@@ -14,7 +14,11 @@
     limitations under the License.
 --}}
 {{#if (config 'sourceFiles.generate')}}
+    {{#if (isSrcFilePrivate meta.path meta.filename)}}
+        <p {{~cssClass '!source-link'}}>{{translate 'source'}} not published</p>
+    {{else}}
     {{#all meta meta.filename meta.lineno}}
         <p {{~cssClass '!source-link'}}>{{translate 'source'}} {{linkToLine meta}}</p>
     {{/all}}
+    {{/if}}
 {{/if}}

@@ -22,7 +22,7 @@
         {{/block}}
         {{#block 'body-main-source-content'}}
             <article>
-                <pre {{~cssClass '!prettyprint' '!linenums' 'source'}}><code>{{docs}}</code></pre>
+                <pre {{~cssClass '!linenums' '!source' '!lang-js' '!hljs'}}><code {{~cssClass '!nohighlight'}}>{{{docs}}}</code></pre>
             </article>
         {{/block}}
     {{/content}}

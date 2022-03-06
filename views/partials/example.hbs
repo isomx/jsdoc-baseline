@@ -19,5 +19,5 @@
         {{!-- TODO: better markup for this --}}
         <p {{~cssClass 'example-caption'}}>{{caption}}</p>
     {{/if}}
-    <pre {{~cssClass '!prettyprint'}}><code>{{code}}</code></pre>
+    <pre {{~cssClass '!hljs' '!lang-js'}}><code {{~cssClass '!nohighlight'}}>{{{highlightCode code}}}</code></pre>
 </div>
