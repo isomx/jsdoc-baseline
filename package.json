@@ -1,6 +1,6 @@
 {
   "name": "@isomx/jsdoc-baseline",
-  "version": "1.0.0",
+  "version": "4.1.6",
   "description": "A fork of Baseline template by Jeff Williams",
   "main": "publish.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "intl-pluralrules": "^1.0.1",
     "js-beautify": "^1.9.1",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "semver": "^6.0.0",
     "spdx-license-list": "^6.0.0"
   },

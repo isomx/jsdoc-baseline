@@ -8,3 +8,7 @@ CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 gulpfile.js
 test/
+.yarn/
+.idea
+.vscode/
+.pnp.*

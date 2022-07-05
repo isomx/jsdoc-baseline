@@ -16,11 +16,12 @@
 {{#any returns}}
     <dt>{{translateHeading 'returns' returns}}</dt>
     {{#each returns}}
-        <dd>
+        <dd {{~cssClass '!symbol-returns' }}>
             {{~#markdown~}}
                 {{~#all type~}}
                     <code>{{describeType type}}</code>&nbsp;
                 {{~/all~}}
+                <br/><br/>
                 {{~resolveLinks description~}}
             {{~/markdown~}}
         </dd>
