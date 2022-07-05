@@ -5,7 +5,8 @@
 // The only modification is to skip files that end
 // in "loadable.js", which avoids incorrectly transforming
 // examples that show code splitting/dynamically loaded
-// chunks.
+// chunks. Also, it uses `.` instead of `~` in the
+// transformed type declaration.
 //
 // The original work is licensed under Apache-2.0,
 // license available here:
@@ -165,7 +166,7 @@ function beforeParse(e) {
       return substring.replace(importRegex,
         (_substring2, relImportPath, symbolName) => {
           const moduleId = getModuleId(e.filename, relImportPath);
-          return (moduleId) ? `module:${moduleId}${symbolName?"~"+symbolName:""}` : symbolName;
+          return (moduleId) ? `module:${moduleId}${symbolName?"."+symbolName:""}` : symbolName;
         });
     });
 };
@@ -250,7 +251,7 @@ function jsdocCommentFound(e) {
   e.comment = e.comment.replace(typeRegex, (typeExpr) => {
     return typeExpr.replace(identifiers, (identifier) => {
       return (fileInfo.moduleId && typeDefsSet.has(identifier)) ?
-        `module:${fileInfo.moduleId}~${identifier}` :
+        `module:${fileInfo.moduleId}.${identifier}` :
         identifier;
     });
   });
