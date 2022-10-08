@@ -14,6 +14,17 @@
 // https://github.com/polyforest/jsdoc-tsimport-plugin/blob/main/LICENSE
 ////////////////////////////////////////////////////////////////////////////
 
+/*
+ * I started to implement a better RegExp so that only import in
+ * a type-like tag would get transformed. Similar to the update
+ * to "typeof". I didn't finish working through it, since the
+ * current implementation is passable for now, but here's
+ * the beginnings of a RegExp to perform the matching:
+ */
+// const matchTag = /import\(['"](\@?[\.\/_a-zA-Z0-9-\$]*)(?:\.js)?['"]\)\.?([_a-zA-Z0-9-\$]*)?/g;
+// Another option
+// const matchTag2 = /(@(?=type|property).+?\s)/g;
+
 const path = require('path');
 const fs = require('fs');
 const env = require('jsdoc/env');

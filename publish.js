@@ -88,7 +88,13 @@ exports.publish = (data, opts, tutorials) => {
     // load the core modules using the file finder
     init(conf.modules);
     /*
-     *
+     * This can be provided to properly segment
+     * files based on the build version. That way
+     * it doesn't overwrite documentation for
+     * another version. It doesn't have to be
+     * a version, but that's typically what is
+     * appended to the base output. So, for example,
+     * "docs" would be "docs_4_0_1".
      */
     const hash = resolveDestHash(opts, 'DOCS_DESTINATION_HASH');
     const dataOutput = opts.dataOutput;
@@ -103,9 +109,11 @@ exports.publish = (data, opts, tutorials) => {
         }
         dataOutput.destination = destination;
         if (dataOutput.privateSrcFilesMap) {
-            privateSrcFilesMap = require(
-              path.join(destination, 'privateSrcFilesMap.json')
-            );
+            try {
+                privateSrcFilesMap = require(
+                  path.join(destination, 'privateSrcFilesMap.json')
+                );
+            } catch(e) {}
         }
     }
     if (!privateSrcFilesMap) {
@@ -126,7 +134,7 @@ exports.publish = (data, opts, tutorials) => {
     } else {
         linksBasePath = null;
     }
-    linkFormatter = new LinkFormatter(linksBasePath);
+    linkFormatter = new LinkFormatter(linksBasePath, opts);
     opts.privateSrcFilesMap = privateSrcFilesMap;
     opts.linksBasePath = linksBasePath;
     opts.linkFormatter = linkFormatter;
